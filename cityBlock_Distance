@@ -1,0 +1,16 @@
+% Define the center coordinates of the circle
+Cx = 50;  % X-coordinate of the center
+Cy = 50;  % Y-coordinate of the center
+Radius=20; % Define the radius of the circle
+
+A=zeros(100,100);  % Initialize a 100x100 matrix with zeros (black background)
+
+for i=1:100
+    for j=1:100
+        if abs(Cx-i)+abs(Cy-j)<=Radius % Cityblock Distance
+            A(i,j)=255; %setting pixels to white if within the radius
+        end
+    end
+end
+
+imshow(A); %display the result
